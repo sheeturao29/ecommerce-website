@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Closet | BinaryCloset.com </title>
+    <link rel="stylesheet" href="css/styleb.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bahiana&family=Barlow+Condensed:ital,wght@0,400;1,300&family=Dancing+Script&family=IBM+Plex+Mono:ital,wght@1,300&family=Maven+Pro&family=Oswald:wght@200&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bahiana&family=Barlow+Condensed:ital,wght@0,400;1,300&family=Dancing+Script&family=IBM+Plex+Mono:ital,wght@1,300&family=Maven+Pro&family=Oswald:wght@200&family=Rubik+Doodle+Shadow&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bahiana&family=Barlow+Condensed:ital,wght@0,400;1,300&family=Dancing+Script&family=Glass+Antiqua&family=IBM+Plex+Mono:ital,wght@1,300&family=Maven+Pro&family=Oswald:wght@200&family=Rubik+Doodle+Shadow&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+            
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* CSS Variables */
+        :root {
+            --navbar-height: 59px;
+        }
+
+        :root {
+            --condition-height: 100px;
+        }
+
+        /* Navigation Bar */
+
+        #navbar {
+            display: flex;
+            align-items: center;
+            /* top:0px;
+            position: sticky; */
+        }
+
+        #position {
+            position: sticky;
+            top: 0px;
+        }
+
+        /* Navigation Bar: Logo and Images */
+        #logo {
+            margin: 10px 34px;
+        }
+
+        #logo img {
+            height: 59px;
+            margin: 3px 6px;
+
+        }
+
+        /* Navigation Bar: List Styling */
+        #navbar ul {
+            display: flex;
+
+        }
+
+        #navbar::before {
+            content: "";
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.4;
+
+
+        }
+
+        #navbar ul li {
+            /* color: white; */
+            list-style: none;
+            font-size: 1.3rem;
+        }
+
+        #navbar ul li a {
+            color: rgb(0, 0, 0);
+            display: block;
+            padding: 3px 22px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-family: 'Barlow Condensed', sans-serif;
+
+        }
+
+        #navbar ul li a:hover {
+            color: rgb(215, 175, 89);
+            text-decoration: underline;
+
+        }
+
+        .header {
+            position: absolute;
+            right: 150px;
+            top: 28px;
+            display: inline-block;
+        }
+
+        .form-group input {
+            margin: 0px 9px;
+            padding: 4px 14px;
+            border: 2px solid rgb(172, 123, 51);
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            font-family: 'Barlow Condensed', sans-serif;
+            
+
+        }
+
+        #logo div {
+            font-size: 15px;
+            line-height: 15px;
+            text-align: center;
+            color: rgb(151, 103, 20);
+
+
+        }
+
+        #home {
+            display: flex;
+            flex-direction: column;
+            height: 380px;
+            padding: 3px 200px;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            
+        }
+
+        #home::before {
+            content: "";
+            position: absolute;
+            background: url(model9.jpg) no-repeat center center/cover;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.85;
+
+
+        }
+
+        .container {
+
+            border: 2px solid rgb(255, 255, 255);
+            position: relative;
+            margin: 10px 0px;
+            padding: 10px 50px;
+
+        }
+
+        .h-primary {
+            font-size: 3.0rem;
+            padding: 12px;
+            font-family: 'Rubik Doodle Shadow', system-ui;
+            /* color:rgb(98, 77, 14); */
+
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 13px 20px;
+
+        }
+
+
+
+        #home h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            text-align: center;
+            font-size: 3.0rem;
+        }
+
+        #home p {
+            font-family: 'Barlow Condensed', sans-serif;
+            text-align: center;
+            font-size: 1.6rem;
+
+        }
+
+        .btn {
+            border: 2px solid rgb(129, 89, 5);
+            color: rgb(255, 255, 255);
+            background-color: rgb(180, 127, 58);
+            margin-top: 30px;
+            width: 80px;
+            height: 30px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        #services {
+            margin: 34px;
+            display: flex;
+        }
+
+        #services .box {
+            border: 2px solid rgb(116, 92, 6);
+            padding: 24px;
+            margin: 3px 6px;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        #services .box img {
+            height: 400px;
+            /* border:2px solid rgb(23, 2, 72); */
+            margin: auto;
+            display: block;
+
+
+        }
+
+        #services .box p {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.6rem;
+        }
+
+        .h-secondary {
+            font-size: 2.6rem;
+            padding: 10px;
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+
+        #services2 {
+            display: flex;
+            margin: 34px;
+        }
+
+        #services2 .box2 img {
+            height: 350px;
+            /* border:2px solid rgb(38, 255, 18); */
+            margin: 20px;
+            display: block;
+        }
+
+        #services2 .box2 {
+            /* border:2px solid rgb(116, 92, 6); */
+            padding: 0px;
+            margin: 10px 20px;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .box2 {
+            font-size: 50px;
+            font-family: 'Barlow Condensed', sans-serif;
+            background-color: rgb(130, 91, 18);
+            text-align: center;
+
+        }
+
+        .box3 #a {
+            font-size: 90px;
+            font-family: 'Glass Antiqua', cursive;
+            /* background-color:rgb(130, 91, 18) ; */
+            text-align: center;
+            color: rgb(116, 86, 4);
+
+        }
+
+        .box3 #b {
+            font-size: 30px;
+            font-family: 'Barlow Condensed', sans-serif;
+            /* background-color:rgb(130, 91, 18) ; */
+            text-align: center;
+            color: rgb(2, 58, 77);
+
+        }
+
+        .box3 #c {
+            font-size: 60px;
+            font-family: 'Glass Antiqua', cursive;
+            /* background-color:rgb(130, 91, 18) ; */
+            text-align: center;
+            color: rgb(116, 86, 4);
+
+        }
+
+        .box3 #d {
+            font-size: 25px;
+            font-family: 'Barlow Condensed', sans-serif;
+            /* background-color:rgb(130, 91, 18) ; */
+            text-align: center;
+            color: rgb(1, 53, 83);
+
+        }
+
+        .sale {
+            margin: 20px 0px;
+            border: 2px solid rgb(130, 91, 18);
+            background-color: rgb(175, 143, 83);
+        }
+
+        .sale2 {
+            /* padding:10px 20px; */
+            margin: 20px 0px;
+            border: 2px solid rgb(130, 91, 18);
+            background: linear-gradient(rgb(109, 154, 206), rgb(205, 176, 112));
+        }
+
+        #services3 {
+            display: flex;
+            margin: 34px;
+        }
+
+        #services3 .box3 img {
+            height: 350px;
+            /* border:2px solid rgb(38, 255, 18); */
+            margin: 20px;
+            display: block;
+        }
+
+        #services3 .box3 {
+            /* border:2px solid rgb(116, 92, 6); */
+            padding: 0px;
+            margin: 10px 20px;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        #client {
+            display: flex;
+            flex-direction: row;
+            height: 100px;
+            /* margin:200px; */
+            padding: 10px 200px;
+            justify-content: center;
+            align-items: center;
+            /* color: rgb(218, 0, 0); */
+        }
+
+        #client::before {
+            content: "";
+            position: absolute;
+            /* background: url(model9.jpg) no-repeat center center/cover; */
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.89;
+
+
+        }
+
+        #client {
+            margin-top: 20px;
+            display: flex;
+            /* background-color: rgb(218, 189, 137); */
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #client .class-item {
+            border: 2px solid rgb(116, 92, 6);
+            padding: 20px 20px;
+            /* margin-top: 100px; */
+            margin: 100px;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        #client .class-item img {
+            height: 40px;
+            /* border:2px solid rgb(23, 2, 72); */
+            margin: auto;
+            display: block;
+
+
+        }
+       
+        #binary {
+            display: flex;
+            flex-direction: row;
+            height: 500px;
+            /* margin:200px; */
+            margin: 20px 0px;
+            padding: 20px 200px;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(126, 101, 2);
+            /* color: rgb(218, 0, 0); */
+
+        }
+
+        #binary::before {
+            content: "";
+            position: absolute;
+            /* background: url(model9.jpg) no-repeat center center/cover; */
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.9;
+
+
+        }
+
+        #box4 p {
+            color: white;
+            margin: 20px;
+
+
+        }
+
+        #box4 ul {
+            display: block;
+        }
+
+        #box4::before {
+            content: "";
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        #box4 ul li {
+            /* color: white; */
+            list-style: none;
+            font-size: 1.3rem;
+        }
+
+        #binary ul li a {
+            color: rgb(255, 255, 255);
+            display: block;
+            padding: 3px 22px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-family: 'Barlow Condensed', sans-serif;
+
+        }
+
+        #binary ul li a:hover {
+            /* color: rgb(210, 177, 104); */
+            text-decoration: underline;
+
+        }
+
+        #box5 p {
+            color: white;
+            margin: 20px;
+
+        }
+
+        #box5 ul {
+            display: block;
+        }
+
+        #box5::before {
+            content: "";
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        #box5 ul li {
+            /* color: white; */
+            list-style: none;
+            font-size: 1.3rem;
+        }
+
+        #box6 p {
+            color: white;
+            margin: 20px;
+
+
+        }
+
+        #box6 ul {
+            display: block;
+        }
+
+        #box6::before {
+            content: "";
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        #box6 ul li {
+            /* color: white; */
+            list-style: none;
+            font-size: 1.3rem;
+        }
+
+        #box7 p {
+            color: white;
+            margin: 20px;
+
+        }
+
+        #box7 ul {
+            display: block;
+        }
+
+        #box7::before {
+            content: "";
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        #box7 ul li {
+            /* color: white; */
+            list-style: none;
+            font-size: 1.3rem;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav id="position">
+        <header class="header">
+            <form action="noaction.php">
+                <div class="form-group">
+                    <input type="text" name="" placeholder="Search BINARY">
+                </div>
+
+        </header>
+        <nav id="navbar">
+            <div id="logo">
+                <img src="loogo.jpg" alt="Binary">
+                <div>BINARY CLOSET</div>
+            </div>
+            <ul>
+                <li class="item"><a href="#">WOMEN</a></li>
+                <li class="item"><a href="#">MEN</a></li>
+                <li class="item"><a href="#">KIDS</a></li>
+                <li class="item"><a href="#">HOME & LIVING</a></li>
+                <li class="item"><a href="#">BEAUTY</a></li>
+                <li class="item"><a href="#">STUDIO</a></li>
+            </ul>
+        </nav>
+
+    </nav>
+
+    <main class="container">
+        <section id="home">
+            <h2 class="h-primary">
+                ELEVATE YOUR WARDROBE WITH BINARY's BEST CLOSET
+            </h2>
+            <p>
+                2024 STYLE REVOLUTION!
+            </p>
+            <button class="btn">SHOP</button>
+        </section>
+    </main>
+    <section class="services-container">
+        <h1 class="h-primary center">
+            Top Fashion Icon
+        </h1>
+        <div id="services">
+            <div class="box">
+                <img src="model8.jpg" alt="">
+                <h2 class="h-secondary center">Best Picks</h2>
+                <p class="center">MIN.30% OFF</p>
+            </div>
+            <div class="box">
+                <img src="model2.jpg" alt="">
+                <h2 class="h-secondary center">Top Brands</h2>
+                <p class="center">MIN.30% OFF</p>
+            </div>
+            <div class="box">
+                <img src="model0.jpg" alt="">
+                <h2 class="h-secondary center">Premium Fits</h2>
+                <p class="center">UP TO 50% OFF</p>
+            </div>
+        </div>
+    </section>
+    <section class="sale">
+        <div id="services2">
+            <div class="box2">
+                <img src="model3.jpg" alt="">
+            </div>
+            <div class="box2">
+                <img src="modell4.jpg" alt="">
+            </div>
+            <div class="box2">
+                <br>
+
+                WINTER SALE<BR>
+                MIN.30% OFF
+            </div>
+        </div>
+    </section>
+    <section class="sale2">
+        <div id="services3">
+            <div class="box3">
+                <img src="modell3.jpg" alt="">
+            </div>
+            <div class="box3">
+                <img src="modell5.jpg" alt="">
+            </div>
+            <div class="box3">
+                <p id="a">The Iconic Ones</p>
+
+                <p id="b"> Styles you'd love to try</p>
+
+
+                <p id="c"> Only on BINARY's CLOSET</p>
+
+                <p id="d">For you, by us</p>
+            </div>
+        </div>
+    </section>
+    <section class="client-section">
+        <h2 class="h-primary center">
+            BINARY's CARES
+        </h2>
+        <div id="client">
+            <div class="class-item">
+                <img src="cares1.jpg" alt="">
+                <p class="center">Assured Quality</p>
+
+            </div>
+            <div class="class-item">
+                <img src="cares3.png" alt="">
+                <p class="center2">100% Handpicked</p>
+
+            </div>
+            <div class="class-item">
+                <img src="cares4.jpg" alt="">
+                <p class="center">Easy Exchange</p>
+
+            </div>
+        </div>
+    </section>
+    <section class="terms">
+        <div id="binary">
+
+            <div id="box4">
+                <p>BINARY</p>
+                <ul>
+                    <li class="last"><a href="#"> Who We Are</a></li>
+                    <li class="last"><a href="#">Join Our Team</a></li>
+                    <li class="last"><a href="#">Terms & Conditions</a></li>
+                    <li class="last"><a href="#">We Respect Your Privacy</a></li>
+                    <li class="last"><a href="#">Fees &
+                            Payments</a></li>
+                    <li class="last"><a href="#">Returns & Refunds Policy</a></li>
+                    <li class="last"><a href="#">Promotions Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <div id="box5">
+                <p>Help</p>
+                <ul>
+                    <li class="last"><a href="#"> Track Your Order</a></li>
+                    <li class="last"><a href="#">Frequently Asked Questions</a></li>
+                    <li class="last"><a href="#">Returns</a></li>
+                    <li class="last"><a href="#">Cancellations</a></li>
+                    <li class="last"><a href="#">Payments</a></li>
+                    <li class="last"><a href="#">Customer
+                            Care</a></li>
+                    <li class="last"><a href="#">How Do I Redeem My Coupon</a></li>
+                </ul>
+            </div>
+
+            <div id="box6">
+                <p>Shop by</p>
+                <ul>
+                    <li class="last"><a href="#">Men </a></li>
+                    <li class="last"><a href="#">Women</a></li>
+                    <li class="last"><a href="#">Kids</a></li>
+                    <li class="last"><a href="#">Indie</a></li>
+                    <li class="last"><a href="#">Store</a></li>
+                    <li class="last"><a href="#">New Arrivals</a></li>
+                    <li class="last"><a href="#">Brand Directory</a></li>
+                    <li class="last"><a href="#">Home</a></li>
+                    <li class="last"><a href="#">Collections</a></li>
+                </ul>
+            </div>
+
+            <div id="box7">
+                <p>Follow us</p>
+                <ul>
+                    <li class="last"><a href="#">Facebook</a></li>
+                    <li class="last"><a href="#">Instagram-BinaryCloset</a></li>
+                    <li class="last"><a href="#">Twitter</a></li>
+                    <li class="last"><a href="#">Pintrest</a></li>
+                </ul>
+            </div>
+
+
+
+
+        </div>
+    </section>
+    <footer>
+        <div class="center">
+            Copyright &copy; www.binary.com.All rights reserved!
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
